@@ -1,0 +1,35 @@
+.item{
+    margin: auto;
+    margin-top: 50px;
+    width:60%;
+    height: 500px;
+    background-color: white;
+    
+}
+.item-header{
+    padding:30px;
+    
+}
+.item-title{
+    padding: 30px;
+    font-size:150%;
+    text-align: left;
+    float: left;
+}
+
+.item-input{
+    margin: 40px;
+    background:transparent;
+    border:none;
+    border-bottom: 3px solid ;
+    width:300px;
+}
+
+.item-button{
+    background: transparent;
+    border: none;
+    color: rgb(181, 136, 223);
+    padding: 15px 32px;
+    margin: 15px;
+    font-size: 20px;
+}

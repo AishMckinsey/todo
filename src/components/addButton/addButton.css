@@ -1,0 +1,9 @@
+.add-button{
+    background-color: rgb(181, 136, 223);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    margin: 15px;
+    font-size: 20px;
+    float: right;
+}

@@ -1,0 +1,10 @@
+.list-item{
+    border: 4px;
+    border-style: double;
+    border-color:bisque;
+    background-color: aliceblue;
+    padding: 20px;
+    margin: 20px;
+    width: 400px;
+    height: 100px;
+}
