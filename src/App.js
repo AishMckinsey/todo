@@ -14,9 +14,20 @@ function App() {
   
   const [initialTask, setInitialTask]  = useState(INPUT_DUMMY_DATA);
   const onSaveTask = (newTaskItem) => {
-    setInitialTask((prevState)=>[newTaskItem,...prevState])
+    setInitialTask((prevState)=>[...prevState,newTaskItem])
     // console.log(initialTask);
   };
+
+  const [indexTask, setIndexTask] = useState(-1);
+  const saveIndexTask = (newValue) => {
+    setIndexTask(newValue);
+    
+  }
+
+  const [indexSubTask, setIndexSubTask] = useState(-1);
+  const saveIndexSubTask = (newValue) => {
+    setIndexSubTask(newValue);
+  }
 
   const [pageValue, setPageValue] = useState(0);
   const savePageValue = (newPageValue) => {
@@ -31,9 +42,9 @@ function App() {
 
   return (
     <div className="App">
-      { (pageValue === 0) ?<TaskList onEditTask={onEditTask} taskList={initialTask} savePageValue={savePageValue}></TaskList>
+      { (pageValue === 0) ?<TaskList onEditTask={onEditTask} taskList={initialTask} savePageValue={savePageValue} saveIndexTask={saveIndexTask} saveIndexSubTask={saveIndexSubTask} ></TaskList>
       :(pageValue === 1)?<AddTask savePageValue={savePageValue} onSaveTask={onSaveTask} ></AddTask>
-      :<UpdateSubTask selectedTask={selectedTask}></UpdateSubTask>}
+      :<UpdateSubTask taskList={initialTask} selectedTask={selectedTask} savePageValue={savePageValue} indexTask={indexTask} indexSubTask={indexSubTask} ></UpdateSubTask>}
     </div>
   );
 

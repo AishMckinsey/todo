@@ -14,8 +14,8 @@ const TaskList = (props) =>{
             </header>
             <div className='list-item-container'>
                 {
-                    props.taskList.map( (details) => (
-                    <Item item={displayString} savePageValue={props.savePageValue} onEditTask={props.onEditTask} ></Item>
+                    props.taskList.map( (details,index) => (
+                    <Item item={displayString} savePageValue={props.savePageValue} onEditTask={props.onEditTask} task={details.task} subTask={details.subTask} saveIndexTask={props.saveIndexTask} saveIndexSubTask={props.saveIndexSubTask}  indexTask={index}></Item>
                     ))
                 }
             </div>

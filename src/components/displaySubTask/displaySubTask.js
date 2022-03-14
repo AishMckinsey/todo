@@ -10,7 +10,7 @@ const DisplaySubTask = (props) => {
             <button className="item-button" type="reset" onClick={returnBack}> CANCEL </button>
             {
                 props.subTask.map( (details,index) => (
-                    <Item onEditTask={props.onEditTask} savePageValue={props.savePageValue} task={details}></Item>
+                    <Item onEditTask={props.onEditTask} savePageValue={props.savePageValue} saveIndex={props.saveIndex} task={details} indexSubTask={index} saveIndexSubTask={props.saveIndexSubTask}></Item>
                 ))
             }
         </div>

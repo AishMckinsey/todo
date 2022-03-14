@@ -11,9 +11,13 @@ const Item = (props) => {
         if(props.item === 'Add Task'){
             event.preventDefault();
             setIsSubTaskVisible(true);
+            props.saveIndexTask(props.indexTask); 
         }
         else{
-            props.onEditTask(props.task)
+            props.onEditTask(props.task);
+            console.log(props);
+            props.saveIndexSubTask(props.indexSubTask);
+            console.log(props);
         }
     }; 
 
@@ -23,7 +27,7 @@ const Item = (props) => {
             <button onClick={showSubTask} ><h1>{props.task}</h1></button>
              
             { isSubTaskVisible ? (
-                <DisplaySubTask onEditTask={props.onEditTask} setIsSubTaskVisible={setIsSubTaskVisible} subTask = {props.subTask} savePageValue={props.savePageValue} ></DisplaySubTask>
+                <DisplaySubTask onEditTask={props.onEditTask} setIsSubTaskVisible={setIsSubTaskVisible} subTask={props.subTask} savePageValue={props.savePageValue} saveIndexSubTask={props.saveIndexSubTask} saveIndex={props.saveIndex}></DisplaySubTask>
             ): (
                 ""
             )}
