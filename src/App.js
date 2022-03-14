@@ -23,13 +23,17 @@ function App() {
     setPageValue(newPageValue);
   }
 
- 
+ const [selectedTask, setSelectedTask] = useState("");
+ const onEditTask = (task) => {
+   setSelectedTask(task);
+   savePageValue(2);
+ }
 
   return (
     <div className="App">
-      { (pageValue === 0) ?<TaskList taskList={initialTask} savePageValue={savePageValue} ></TaskList>
+      { (pageValue === 0) ?<TaskList onEditTask={onEditTask} taskList={initialTask} savePageValue={savePageValue}></TaskList>
       :(pageValue === 1)?<AddTask savePageValue={savePageValue} onSaveTask={onSaveTask} ></AddTask>
-      :<UpdateSubTask></UpdateSubTask>}
+      :<UpdateSubTask selectedTask={selectedTask}></UpdateSubTask>}
     </div>
   );
 

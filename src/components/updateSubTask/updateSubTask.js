@@ -2,8 +2,7 @@ import {useState} from "react";
 
 const UpdateTask = (props) => {
 
-    /* Have to set the value with initial value itself*/
-    const [enteredTask, setEnteredTask] = useState("");
+    const [enteredTask, setEnteredTask] = useState(props.selectedTask);
 
     const submitHandler =(event) =>{
         event.preventDefault();
@@ -18,8 +17,7 @@ const UpdateTask = (props) => {
         <form onSubmit={submitHandler}>
             <div>
                 <label>UPDATE SUBTASK</label>
-                {/* if I set value here, I am unable to take the input  */}
-                <input onClick={taskHandler} type="text"></input>
+                <input value={enteredTask} onChange={taskHandler} type="text"></input>
             </div>
             <button type="submit">SUBMIT</button> 
             <button type="reset"> CANCEL </button> 
