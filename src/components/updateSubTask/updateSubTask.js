@@ -17,7 +17,7 @@ const UpdateTask = (props) => {
     return (
         <form onSubmit={submitHandler}>
             <div>
-                <label>ADD SUBTASK</label>
+                <label>UPDATE SUBTASK</label>
                 {/* if I set value here, I am unable to take the input  */}
                 <input onClick={taskHandler} type="text"></input>
             </div>

@@ -13,21 +13,17 @@ const Item = (props) => {
            // props.savePageValue(2);
         }
         else{
-            console.log(props);
             props.savePageValue(2);
-            console.log(props);
         }
     }; 
 
 
     return (
         <div className='list-item'>
-            <button onClick={showSubTask}>
-                <h1>{props.task}</h1>
-            </button>
+            <button onClick={showSubTask} ><h1>{props.task}</h1></button>
              
             { isSubTaskVisible ? (
-                <DisplaySubTask saveSubTaskValue={props.saveSubTaskValue} savePageValue={props.savePageValue} setIsSubTaskVisible={props.setIsSubTaskVisible} subTask = {props.subTask}></DisplaySubTask>
+                <DisplaySubTask setIsSubTaskVisible={setIsSubTaskVisible} subTask = {props.subTask} savePageValue={props.savePageValue}></DisplaySubTask>
             ): (
                 ""
             )}

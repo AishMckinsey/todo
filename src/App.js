@@ -15,7 +15,7 @@ function App() {
   const [initialTask, setInitialTask]  = useState(INPUT_DUMMY_DATA);
   const onSaveTask = (newTaskItem) => {
     setInitialTask((prevState)=>[newTaskItem,...prevState])
-    console.log(initialTask);
+    // console.log(initialTask);
   };
 
   const [pageValue, setPageValue] = useState(0);
@@ -23,21 +23,13 @@ function App() {
     setPageValue(newPageValue);
   }
 
-  const [taskValue, setTaskValue] = useState(-1);
-  const saveTaskValue = (newTaskValue) => {
-      setTaskValue(newTaskValue);
-  }
-
-  const [subTaskValue, setSubTaskValue] = useState(-1);
-  const saveSubTaskValue = (newTaskValue) => {
-      setSubTaskValue(newTaskValue);
-  }
+ 
 
   return (
     <div className="App">
       { (pageValue === 0) ?<TaskList taskList={initialTask} savePageValue={savePageValue} ></TaskList>
-      :(pageValue === 1)?<AddTask savePageValue={savePageValue} onSaveTask={onSaveTask} saveTaskValue={saveTaskValue} saveSubTaskValue={saveSubTaskValue}></AddTask>
-      :<UpdateSubTask saveTaskValue={saveTaskValue} saveSubTaskValue={saveSubTaskValue}></UpdateSubTask>}
+      :(pageValue === 1)?<AddTask savePageValue={savePageValue} onSaveTask={onSaveTask} ></AddTask>
+      :<UpdateSubTask></UpdateSubTask>}
     </div>
   );
 
