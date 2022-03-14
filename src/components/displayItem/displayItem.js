@@ -15,9 +15,7 @@ const Item = (props) => {
         }
         else{
             props.onEditTask(props.task);
-            console.log(props);
             props.saveIndexSubTask(props.indexSubTask);
-            console.log(props);
         }
     }; 
 
@@ -27,7 +25,7 @@ const Item = (props) => {
             <button onClick={showSubTask} ><h1>{props.task}</h1></button>
              
             { isSubTaskVisible ? (
-                <DisplaySubTask onEditTask={props.onEditTask} setIsSubTaskVisible={setIsSubTaskVisible} subTask={props.subTask} savePageValue={props.savePageValue} saveIndexSubTask={props.saveIndexSubTask} saveIndex={props.saveIndex}></DisplaySubTask>
+                <DisplaySubTask savePageValue={props.savePageValue} onEditTask={props.onEditTask} setIsSubTaskVisible={setIsSubTaskVisible} subTask={props.subTask} savePageValue={props.savePageValue} saveIndexSubTask={props.saveIndexSubTask} saveIndex={props.saveIndex}></DisplaySubTask>
             ): (
                 ""
             )}

@@ -3,12 +3,13 @@ import {useState} from "react";
 const UpdateTask = (props) => {
 
     const [enteredTask, setEnteredTask] = useState(props.selectedTask);
+    //const [initialList, setInitialList] = useState(props.taskList[props.indexTask].subTask[props.indexSubTask]);
 
     const submitHandler =(event) =>{
         event.preventDefault();
-        //props.onUpdateTask(enteredTask);
-        console.log(props);
-        //props.initialTask.task[props.indexTask].subTask[props.indexSubTask] = enteredTask;
+        console.log("hello");
+        props.saveNewValue(props.selectedTask);
+        props.savePageValue(0);
     }
 
     const taskHandler = (event) => {

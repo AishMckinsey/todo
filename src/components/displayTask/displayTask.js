@@ -7,7 +7,6 @@ const TaskList = (props) =>{
     const displayString = "Add Task";
 
     return (
-        
         <div> 
             <header className='list-header'>
                 <AddButton displayString={displayString} savePageValue={props.savePageValue} ></AddButton>

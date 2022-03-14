@@ -16,6 +16,7 @@ const AddCard = (props) => {
             props.savePageValue(0);
         }
         else{
+            // props.value === 'Sub Task'
             item = {
                 // have to write passed down task 
                 // have to write new subtask

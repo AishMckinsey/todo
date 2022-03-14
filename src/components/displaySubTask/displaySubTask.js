@@ -1,12 +1,17 @@
-
 import Item from '../displayItem/displayItem'
+
 const DisplaySubTask = (props) => {
     const returnBack = () => {
         props.setIsSubTaskVisible(false);
     }
 
+    const addSubTask = (event) => {
+        props.savePageValue(3);
+    }
+    
     return (
         <div>  
+            <button className="item-button" onClick={addSubTask}>ADD</button>
             <button className="item-button" type="reset" onClick={returnBack}> CANCEL </button>
             {
                 props.subTask.map( (details,index) => (

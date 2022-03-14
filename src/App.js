@@ -15,19 +15,7 @@ function App() {
   const [initialTask, setInitialTask]  = useState(INPUT_DUMMY_DATA);
   const onSaveTask = (newTaskItem) => {
     setInitialTask((prevState)=>[...prevState,newTaskItem])
-    // console.log(initialTask);
   };
-
-  const [indexTask, setIndexTask] = useState(-1);
-  const saveIndexTask = (newValue) => {
-    setIndexTask(newValue);
-    
-  }
-
-  const [indexSubTask, setIndexSubTask] = useState(-1);
-  const saveIndexSubTask = (newValue) => {
-    setIndexSubTask(newValue);
-  }
 
   const [pageValue, setPageValue] = useState(0);
   const savePageValue = (newPageValue) => {
@@ -40,11 +28,40 @@ function App() {
    savePageValue(2);
  }
 
-  return (
+
+  // selected task
+  const [indexTask, setIndexTask] = useState(-1);
+  const saveIndexTask = (newValue) => {
+    setIndexTask(newValue);
+    
+  }
+
+  // selected sub task
+  const [indexSubTask, setIndexSubTask] = useState(-1);
+  const saveIndexSubTask = (newValue) => {
+    setIndexSubTask(newValue);
+  }
+
+ // updated value
+ const [newValue, setNewValue] = useState("");
+ const saveNewValue = (task) => {
+   setNewValue(task);
+ }
+ 
+//  const onSave = () => {
+//   initialTask[indexTask].subTask[indexSubTask] = 
+//  }
+ //const [newUpdate, setNewUpdate] = useState();
+ //console.log(initialTask[indexTask].subTask[indexSubTask]);
+  
+ return (
     <div className="App">
-      { (pageValue === 0) ?<TaskList onEditTask={onEditTask} taskList={initialTask} savePageValue={savePageValue} saveIndexTask={saveIndexTask} saveIndexSubTask={saveIndexSubTask} ></TaskList>
-      :(pageValue === 1)?<AddTask savePageValue={savePageValue} onSaveTask={onSaveTask} ></AddTask>
-      :<UpdateSubTask taskList={initialTask} selectedTask={selectedTask} savePageValue={savePageValue} indexTask={indexTask} indexSubTask={indexSubTask} ></UpdateSubTask>}
+      { 
+        (pageValue === 0) ?<TaskList onEditTask={onEditTask} taskList={initialTask} savePageValue={savePageValue} saveIndexTask={saveIndexTask} saveIndexSubTask={saveIndexSubTask} ></TaskList>
+        :(pageValue === 1)?<AddTask savePageValue={savePageValue} onSaveTask={onSaveTask} value={"Task"}></AddTask>
+        :(pageValue===2)?<UpdateSubTask taskList={initialTask} selectedTask={selectedTask} savePageValue={savePageValue} saveNewValue={saveNewValue} ></UpdateSubTask>
+        :<AddTask savePageValue={savePageValue} onSaveTask={onSaveTask} value={"Sub Task"} ></AddTask>
+      }
     </div>
   );
 
